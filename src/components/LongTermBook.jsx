@@ -15,7 +15,7 @@ export default function LongTermBook({show, setShow}) {
 
             {
                 show &&
-                <img className="scale-50 opacity-90 -my-10" src="/icons/long-term-cars.png" alt="long-term-cars" />  
+                <img className="scale-50 opacity-90 -my-10" src="/icons/long-term-cars.png" alt="long term fleet" />  
             }
 
             <div className="flex justify-center mt-2">
