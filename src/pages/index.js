@@ -34,7 +34,7 @@ export default function Home(props) {
     
       <section  id="about-us" className='pt-5'>
         <div id="aboutUs" className='text-center mt-5 mx-6 lg:mx-72 text-black'>
-          <h1><strong>Allure</strong> <br/><small>Car Rentals Limassol</small></h1>
+          <h1 className='text-highlight1'>Rent a Luxury Car in Limassol</h1>
           <br/>
           <p>Welcome to <strong>Allure Luxury Car Rentals</strong>, the best choice for <strong>car rental in Limassol. </strong>
           We offer a wide range of vehicles, from <strong>economy</strong> to <strong>luxury</strong>, to suit your needs and budget.
@@ -54,7 +54,7 @@ export default function Home(props) {
 
       <section  id="long-term" className='pt-5 md:grid md:grid-cols-2 text-center mx-6 gap-5'>
         <div>
-          <h1 className='text-highlight1'>Long Term Rentals</h1>
+          <h2 className='text-highlight1'>Long Term Rentals</h2>
           <p>Are you looking for a car rental in Limassol for a <strong>month or longer?</strong> If so, you should consider our long term contract option. With our long term contract, you can enjoy:
           </p>
           <ul className='text-start'>

@@ -8,7 +8,7 @@ export default function CarBook(props) {
             <>
             {!props.showBookCar &&
                 <>
-                <h1><strong>Rent a car</strong></h1>
+                <h2><strong>Rent a car</strong></h2>
                 <button className='mt-2'
                     onClick={() => {router.push("/book-a-car")}}>
                     FIND A CAR
