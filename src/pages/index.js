@@ -52,6 +52,7 @@ export default function Home(props) {
         </div>
       </section>
 
+
       <section  id="long-term" className='pt-5 md:grid md:grid-cols-2 text-center mx-6 gap-5'>
         <div>
           <h2 className='text-highlight1'>Long Term Rentals</h2>
