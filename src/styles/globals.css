@@ -27,6 +27,7 @@ body {
   background-color: var(--background);
   padding-top: 70px;
   font-family: 'Lato', sans-serif;
+  line-height:  1.5rem;
 }
 
 .navbar {
@@ -57,7 +58,7 @@ body {
   background: linear-gradient(0deg, rgba(33,30,43,1) 0%, rgba(41,37,59,1) 100%);
 }
 
-button {
+.button-main {
   color: white;
   background-color: var(--b4);
   border: none;
@@ -229,4 +230,136 @@ form input, select, textarea {
   border-color: lightgray;
   margin: 0.2rem;
   margin-left: 0.075rem;
+}
+
+
+
+
+
+.arrows {
+  width: 60px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 20px;
+}
+
+.arrows path {
+  stroke: #2994D1;
+  fill: transparent;
+  stroke-width: 1px;  
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+  animation-delay:-1s;
+  -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+  animation-delay:-0.5s;
+  -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 { 
+  animation-delay:0s;
+  -webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+
+
+.arrow {
+  margin: 50%;
+	width: 25px;
+	height: 25px;
+	background: transparent;
+	border-top: 5px solid var(--b3);
+	border-right: 5px solid var(--b3);
+	box-shadow: 0 0 0 lightgray;
+	transition: all 200ms ease;
+}
+.arrow.left {
+  left: 0;
+  transform: translate3d(0,-50%,0) rotate(-135deg);
+}
+.arrow.right {
+  right: 0;
+  transform: translate3d(0,-50%,0) rotate(45deg);
+}
+.arrow:hover {
+  border-color: var(--b4);
+  box-shadow: 0.5vmin -0.5vmin 0 var(--b4);
+}
+.arrow:hover::before {
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%,-60%) rotate(45deg);
+  width: 200%;
+  height: 200%;
+}
+
+.btn-wrapper {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn-wrapper a {
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  border-radius: 0.3rem;
+}
+
+.btn-wrapper a span{
+  position: relative;
+  z-index: 2;
+}
+
+.btn-wrapper a::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--b4);
+  transition: all .35s;
+}
+
+.btn-wrapper a:hover {
+  color: white;
+  border-color: var(--b4);
+  border-radius: 0.3rem;
+}
+
+.btn-wrapper a:hover:after{
+  width: 100%;
 }

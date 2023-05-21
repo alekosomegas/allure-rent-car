@@ -19,7 +19,7 @@ export default function LongTermBook({show, setShow}) {
             }
 
             <div className="flex justify-center mt-2">
-                <button className="bg-white text-black">See Offers</button>
+                <button className="button-main bg-white text-black">See Offers</button>
             </div>
         </div>
     )

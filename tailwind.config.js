@@ -9,9 +9,11 @@ module.exports = {
 
     colors: {
       dark: "#29253b",
+      bglight: "#e5d9ca",
       highlight1: "#e85042",
       highlight2: "#5799bf",
-      grey: "#D3D3D3"
+      grey: "#D3D3D3",
+      white: "#ffffff"
     },
 
     extend: {

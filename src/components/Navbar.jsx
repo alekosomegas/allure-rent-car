@@ -13,6 +13,7 @@ export default function MainNavbar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
+              <Nav.Link className="text-white" href="/#fleet">Fleet</Nav.Link>
               <Nav.Link className="text-white" href="/#about-us">About Us</Nav.Link>
               <Nav.Link className="text-white" href="/#long-term">Long Term</Nav.Link>
               <Nav.Link className="text-white" href="/#contact-us">Contact Us</Nav.Link>
