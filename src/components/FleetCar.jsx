@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import * as utils from '@/utils';
 
 export default function FleetCar(props) {
     const router = useRouter();   
@@ -16,7 +17,7 @@ export default function FleetCar(props) {
                 <span className="absolute z-0 bg-highlight2 opacity-80 h-[180px] w-[180px] rounded-full"/>
             </div>
             <div className="flex flex-col justify-center text-center">
-                <small>from <strong className='text-lg font-light'>{props.car.price}</strong> per day</small>
+                <small>from <strong className='text-lg font-light'>{utils.toCurrency(props.car.price)}</strong> per day</small>
                 <strong className="text-2xl text-highlight1 font-bold">{props.car.name}</strong>
                 {/* <button onClick={() => {router.push("/book-a-car")}} 
                 className="button-main">Book now</button> */}

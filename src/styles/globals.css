@@ -363,3 +363,10 @@ form input, select, textarea {
 .btn-wrapper a:hover:after{
   width: 100%;
 }
+
+.small-circle {
+  border-radius:  9999px;
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+}

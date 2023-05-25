@@ -1,6 +1,8 @@
 import React from "react";
+import { useRouter } from 'next/router'
 
 export default function LongTermBook({show, setShow}) {
+    const router = useRouter();   
 
     return (
         <div className="flex flex-col justify-center ">
@@ -15,11 +17,11 @@ export default function LongTermBook({show, setShow}) {
 
             {
                 show &&
-                <img className="scale-50 opacity-90 -my-10" src="/icons/long-term-cars.png" alt="long term fleet" />  
+                <img className="max-lg:hidden scale-50 h-full opacity-90 -my-8" src="/cars-thumbnails/fleet.png" alt="long term fleet" />  
             }
 
             <div className="flex justify-center mt-2">
-                <button className="button-main bg-white text-black">See Offers</button>
+                <button onClick={() => router.push("/long-term")} className="button-main bg-white text-black">See Offers</button>
             </div>
         </div>
     )

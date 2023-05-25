@@ -21,6 +21,7 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-flatpickr": "^3.10.13",
+    "react-hotjar": "^6.1.0",
     "react-leaflet": "^4.2.1",
     "tailwindcss": "3.3.2"
   }
