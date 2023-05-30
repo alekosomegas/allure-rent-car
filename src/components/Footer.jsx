@@ -13,8 +13,8 @@ export default function Footer(props) {
             <div className='flex flex-col md:flex-row justify-between'>
               <div className='flex flex-col gap-3'> 
                 <h5 className="text-white">Contact Us</h5>
-                <span>+357 99 667777</span>
-                <span>y.kangkelidis@gmail.com</span>
+                <a>+357 99 667777</a>
+                <span>info@allure-rent-a-car.com</span>
                 <p>Leoforos Amathous 32,<br/> Zanna Complex Block 1 Shop 8, <br/>Limassol, 4532</p>
               </div>
             {props.map &&

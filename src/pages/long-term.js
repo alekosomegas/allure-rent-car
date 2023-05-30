@@ -3,14 +3,10 @@ import LongTermCarListing from '@/components/LongTermCarListining'
 import InfoBox from '@/components/InfoBox'
 import React from 'react'
 import Footer from '@/components/Footer'
+import { nanoid } from 'nanoid'
+import LongTermSteps from "@/components/LongTermSteps";
 
 const cars = require('../cars')
-
-let items
-items = cars
-.filter(car => car.available)
-.sort((a, b) => a.monthlyPrice - b.monthlyPrice)
-.map(car=> <LongTermCarListing car={car}/>)
 
 const infoBoxes =[
 
@@ -44,6 +40,16 @@ const infoBoxes =[
 
 export default function LongTerm(props) {
     const [index, setIndex] = React.useState(0)
+
+    let items
+    items = cars
+    .filter(car => car.available)
+    .sort((a, b) => a.monthlyPrice - b.monthlyPrice)
+    .map(car => <LongTermCarListing 
+        car={car} 
+        setLongTermCar={props.setLongTermCar} 
+        setLongTermStep={props.setLongTermStep}        
+        key={nanoid}/>)
 
     let dots = []
     for (let i = 0; i < infoBoxes.length; i++) {
@@ -96,8 +102,13 @@ export default function LongTerm(props) {
                     </p>
                 </div>
 
+            <div id='cars' className='h-15'/>
             <h4 className='text-dark bg-bglight p-4 '>View all cars</h4>
             </section>
+            <LongTermSteps 
+                step={props.longTermStep}
+                setLongTermStep={props.setLongTermStep}
+                />
             <div className="cars grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-10 py-8">
                 {items}
             </div>

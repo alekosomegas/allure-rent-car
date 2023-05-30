@@ -10,7 +10,9 @@ export default function LongTermCarListing(props) {
     const [showCancelInfo, setShowCancelInfo] = React.useState(false)
 
     function handleClickSelect() {
-
+        props.setLongTermCar(props.car)
+        props.setLongTermStep(2)
+        router.push("/long-term-enquiry")
     }
 
     return (
@@ -118,7 +120,7 @@ export default function LongTermCarListing(props) {
 
 
                     <small onClick={() => setShowCancelInfo(true)}>
-                        <strong>Cancel for free </strong><strong className="step-number !bg-highlight1"> ?</strong>
+                        <strong>Cancel for free </strong><strong className="text-white px-[0.45rem] text-[1.1rem] rounded-full !bg-highlight1"> ?</strong>
                     </small>
                     <div>
 

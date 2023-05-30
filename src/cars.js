@@ -13,6 +13,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Mercedes-Benz C220d",
@@ -28,6 +29,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Mercedes-Benz E220d",
@@ -43,6 +45,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Mercedes-Benz E220d",
@@ -58,6 +61,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Fiat 500",
@@ -73,6 +77,7 @@ const carsData = [
         number_seats: 5,
         extras: ["Bluetooth", "Panoramic sunroof"],
         available: true,
+        photos: [],
     },
     {
         name: "Kia Soul",
@@ -88,6 +93,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Mercedes-Benz ML250",
@@ -103,6 +109,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Mini Cooper",
@@ -113,11 +120,12 @@ const carsData = [
         fuelConsumption: 5,
         fuel: "Petrol",
         large_bags: 1,
-        number_doors: 4,
+        number_doors: 5,
         transmission: "Automatic",
         number_seats: 5,
         extras: [],
         available: true,
+        photos: ["mini1.jpg", "mini2.jpg", "mini3.jpg"],
     },
     {
         name: "Nissan March",
@@ -133,6 +141,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Nissan Note",
@@ -148,6 +157,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Range Rover Evoque",
@@ -163,6 +173,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Volvo XC60",
@@ -178,6 +189,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Renault Clio",
@@ -193,6 +205,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Renault Kadjar",
@@ -208,6 +221,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Renault Arkana",
@@ -223,6 +237,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     {
         name: "Renault Captur",
@@ -238,6 +253,7 @@ const carsData = [
         number_seats: 5,
         extras: [],
         available: true,
+        photos: [],
     },
     
 ]

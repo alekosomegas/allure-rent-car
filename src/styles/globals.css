@@ -370,3 +370,78 @@ form input, select, textarea {
   height: 10px;
   background-color: gray;
 }
+
+.step-number {
+  color: white;
+  background-color:rgb(191, 191, 191);
+  display: inline-block;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+.step-number.done {
+  background-color: var(--b3)
+}
+.step-number.selected {
+  background-color: var(--b4);
+}
+
+.step {
+  border-bottom: 5px solid rgb(191, 191, 191);
+  border-left: 1px solid #bfbfc0;
+  padding: 1rem 0rem 1rem 1rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.step.selected {
+  border-bottom: 5px solid var(--b4);
+  font-weight: 700;
+}
+
+
+
+
+[class^="keen-slider__slide"],
+[class*="keen-slider__slide"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  object-fit: cover;
+  padding: 1rem;
+  border-radius: 0 2rem 0 2rem;
+}
+
+.navigation-wrapper {
+  position: relative;
+}
+
+.c-arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  fill: var(--b3);
+  cursor: pointer;
+}
+
+.c-arrow--left {
+  left: 5px;
+}
+
+.c-arrow--right {
+  left: auto;
+  right: 5px;
+}
+
+.c-arrow--disabled {
+  fill: rgba(255, 255, 255, 0.5);
+}

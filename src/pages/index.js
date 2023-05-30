@@ -95,7 +95,7 @@ export default function Home(props) {
           <br/><br/>
           We are more than a car rental company. We are your partner in exploring the beautiful island of Cyprus.
           With your own car, you can explore the island and its attractions and discover the rich history and culture of Cyprus.</p>
-            <button className='button-main mt-4'>Contact US</button>
+            {/* <button className='button-main mt-4'>Contact US</button> */}
           </div>
         </div>
       </section>

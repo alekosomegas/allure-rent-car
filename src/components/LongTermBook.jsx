@@ -17,7 +17,7 @@ export default function LongTermBook({show, setShow}) {
 
             {
                 show &&
-                <img className="max-lg:hidden scale-50 h-full opacity-90 -my-8" src="/cars-thumbnails/fleet.png" alt="long term fleet" />  
+                <img onClick={() => router.push("/long-term")} className="max-lg:hidden cursor-pointer scale-50 h-full opacity-90 -my-8" src="/cars-thumbnails/fleet.png" alt="long term fleet" />  
             }
 
             <div className="flex justify-center mt-2">
