@@ -36,7 +36,10 @@ export default function LongTermEnquiry(props) {
        } else {
            await fetch("api/mail", {
                 method: "POST",
-                body: JSON.stringify(enquiryDetails)
+                body: JSON.stringify({
+                    info: enquiryDetails,
+                    type: "booking"
+                })
            })
        }
         

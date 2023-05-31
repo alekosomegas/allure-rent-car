@@ -57,6 +57,47 @@ Zanna Complex Block 1 Shop 8,
 Limassol, 4532
     `
 }
+function formatAllureContactEmail(enquiryDetails) {
+    return(
+        `An enquiry has been made. Details follow.
+_________________________________________________________________
+        
+        Client Details:
+        -------------------------------
+        Name:         ${enquiryDetails.name}
+        Email:        ${enquiryDetails.email}
+        Message:      ${enquiryDetails.message}
+        `
+    )
+}
+
+function formatClientContactEmail(enquiryDetails) {
+    return `Hello ${enquiryDetails.name}!
+Thank you for contacting Allure rent-a-car! 
+We have received your enquiry and an agent will contact you soon.
+
+_________________________________________________________________
+
+    Client Details:
+    -------------------------------
+    Name:         ${enquiryDetails.name}
+    Email:        ${enquiryDetails.email}
+    Message:      ${enquiryDetails.message}
+
+
+
+Best regards,
+Allure rent-a-car
+
++357 99 667777
+
+www.allure-rent-a-car.com
+
+Leoforos Amathous 32,
+Zanna Complex Block 1 Shop 8,
+Limassol, 4532
+    `
+}
 
 export default function handler(req, res) {
 
@@ -70,19 +111,19 @@ export default function handler(req, res) {
         },
       });
 
-      if(req === "POST") {
+      if(JSON.parse(req.body).type === "booking") {
         const enquiryMailOptions = {
             from: "admin@allure-rent-a-car.com",
             to: "kangkelidis@gmail.com",
-            subject: `Leasing Enquiry - ${JSON.parse(req.body).car} - ${JSON.parse(req.body).name}`,
-            text: formatEnquiryEmail(JSON.parse(req.body))
+            subject: `Leasing Enquiry - ${JSON.parse(req.body).info.car} - ${JSON.parse(req.body).info.name}`,
+            text: formatEnquiryEmail(JSON.parse(req.body).info)
         }
     
         const confirmMailOptions = {
             from: "info@allure-rent-a-car.com",
-            to: JSON.parse(req.body).email,
+            to: JSON.parse(req.body).info.email,
             subject: 'Long Term Booking Enquiry',
-            text: formatConfirmEmail(JSON.parse(req.body)),
+            text: formatConfirmEmail(JSON.parse(req.body).info),
         }
     
         transporter.sendMail(enquiryMailOptions, (error, info) => {
@@ -100,19 +141,32 @@ export default function handler(req, res) {
       }
 
 
-      if(req === "GET") {
-        const clientEmailOptions = {
-          from: "info@allure-rent-a-car.com",
-          to: JSON.parse(req.body).email,
-          subject: `Enquiry - ${JSON.parse(req.body).name}`,
-          text: formatClientEmail(JSON.parse(req.body))
-        }
+      if(JSON.parse(req.body).type === "contact") {
         const allureEmailOptions = {
           from: "admin@allure-rent-a-car.com",
           to: "kangkelidis@gmail.com",
-          subject: `Enquiry - ${JSON.parse(req.body).name}`,
-          text: formatClientEmail(JSON.parse(req.body))
+          subject: `Enquiry - ${JSON.parse(req.body).info.name}`,
+          text: formatAllureContactEmail(JSON.parse(req.body).info)
         }
+        const clientEmailOptions = {
+          from: "info@allure-rent-a-car.com",
+          to: JSON.parse(req.body).info.email,
+          subject: `Enquiry - ${JSON.parse(req.body).info.name}`,
+          text: formatClientContactEmail(JSON.parse(req.body).info)
+        }
+
+        transporter.sendMail(allureEmailOptions, (error, info) => {
+          if (error) {
+            return console.error(error);
+          }
+          console.log(info);
+        })
+        transporter.sendMail(clientEmailOptions, (error, info) => {
+          if (error) {
+            return console.error(error);
+          }
+          console.log(info);
+        })
   
       }
 

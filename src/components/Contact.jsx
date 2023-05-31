@@ -12,6 +12,21 @@ export default function Contact() {
         message: ""
     })
 
+    async function handleSubmit(event) {
+        event.preventDefault()
+ 
+        await fetch("api/mail", {
+             method: "POST",
+             body: JSON.stringify(
+                {
+                    info: message,
+                    type: "contact"
+                }
+             )})
+
+        alert("Thank you! We have received your message and an agent will contact you soon.")
+     }
+
     return (
         <section className="flex flex-col md:flex-row">
             <div className='w-full max-md:h-[300px] md:w-1/3'>
@@ -34,7 +49,7 @@ export default function Contact() {
                 </div>
               </div>
 
-            <form className="text-center w-1/3 bg-highlight1 p-4 max-md:w-full" action="">
+            <form onSubmit={handleSubmit} className="text-center w-1/3 bg-highlight1 p-4 max-md:w-full" action="">
                 <h3 className="text-white font-bold">Got a Question?</h3>
                 <p className="px-3">We are here to help and answer any question you might have. We look forward to hearing from you.<br/>&#128512;</p>
                 
@@ -73,6 +88,7 @@ export default function Contact() {
                     onChange={newVal => utils.changeSingleStateValue(setMessage, "message", newVal.target.value)}
                     rows="3"
                     id="message"
+                    required
                     ></textarea>
                 </div>
 

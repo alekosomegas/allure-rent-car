@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Faq from "react-faq-component";
-import { useRouter } from 'next/router'
 
 
 const data = {
@@ -56,24 +55,6 @@ const config = {
 
 
 export default function FAQ() {
-    const router = useRouter();  
-
-
-    async function handleSubmit(event) {
-        event.preventDefault()
- 
-        if(enquiryDetails.email !== event.target.querySelector('#email-confirm').value) {
-         alert("Please check email address provided")
-        } else {
-            await fetch("api/mail", {
-                 method: "GET",
-                 body: JSON.stringify(enquiryDetails)
-            })
-        }
-         
-        router.push("/enquiry-sent")
-     }
-
     return (
         <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-6 lg:px-8">
             <Faq
