@@ -14,7 +14,8 @@ export default function Contact() {
 
     async function handleSubmit(event) {
         event.preventDefault()
- 
+        alert("Thank you! We have received your message and an agent will contact you soon.")
+        
         await fetch("api/mail", {
              method: "POST",
              body: JSON.stringify(
@@ -24,7 +25,6 @@ export default function Contact() {
                 }
              )})
 
-        alert("Thank you! We have received your message and an agent will contact you soon.")
      }
 
     return (
