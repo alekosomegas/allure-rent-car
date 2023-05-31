@@ -56,7 +56,7 @@ const config = {
 
 export default function FAQ() {
     return (
-        <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-screen-xl px-8 sm:px-6 lg:px-8">
             <Faq
                 data={data}
                 styles={styles}

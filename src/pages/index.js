@@ -99,7 +99,9 @@ export default function Home(props) {
           </div>
         </div>
       </section>
+      <div id="faq" className="h-[72px]"/>
       <FAQ/>
+      <div id="contact-us" className="h-[72px]"/>
       <Contact />
       <img src='/icons/road.png' alt="road" className='w-full'/>
 

@@ -17,6 +17,7 @@ export default function MainNavbar() {
               <Nav.Link className="text-white" href="/#about-us">About Us</Nav.Link>
               <Nav.Link className="text-white" href="/book-a-car">Rent a Car</Nav.Link>
               <Nav.Link className="text-white" href="/long-term">Long Term</Nav.Link>
+              <Nav.Link className="text-white" href="/#faq">FAQ</Nav.Link>
               <Nav.Link className="text-white" href="/#contact-us">Contact Us</Nav.Link>
             </Nav>
           </Navbar.Collapse>
