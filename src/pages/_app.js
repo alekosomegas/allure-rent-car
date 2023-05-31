@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/globals.css'
+import '@/styles/car.css'
 import Head from 'next/head';
 
 export default function App({ Component, pageProps }) {
   const [longTermCar, setLongTermCar] = React.useState(false)
   const [longTermStep, setLongTermStep] = React.useState(1)
+  const [isLoading, setIsLoading] = React.useState(false)
 
   return (
     <>
@@ -20,6 +22,8 @@ export default function App({ Component, pageProps }) {
         setLongTermCar={setLongTermCar}
         longTermStep={longTermStep}
         setLongTermStep={setLongTermStep}
+        isLoading={isLoading}
+        setIsLoading={setIsLoading}
       />
     </>
     

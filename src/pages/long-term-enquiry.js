@@ -7,6 +7,7 @@ import React from 'react'
 import * as utils from '@/utils';
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/dark.css";
+import LoadingSpinner from '@/components/LoadingSpinner'
 
 
 export default function LongTermEnquiry(props) {
@@ -30,9 +31,10 @@ export default function LongTermEnquiry(props) {
 
     async function handleSubmit(event) {
        event.preventDefault()
+       props.setIsLoading(true)
 
        if(enquiryDetails.email !== event.target.querySelector('#email-confirm').value) {
-        alert("Please check email address provided")
+        alert("Please check the email address provided")
        } else {
            await fetch("api/mail", {
                 method: "POST",
@@ -41,14 +43,28 @@ export default function LongTermEnquiry(props) {
                     type: "booking"
                 })
            })
+           .then(() => {
+                props.setIsLoading(false);
+                router.push("/enquiry-sent")
+           })
+           .catch(e => {
+                console.log(e);
+                props.setIsLoading(false);
+                alert("An Error has occurred. Please check the email address provided.")
+           })
        }
         
-       router.push("/enquiry-sent")
     }
 
     return(
         <main>
             <Navbar/>
+
+            { props.isLoading &&
+                <view className='loading'>
+                        <LoadingSpinner />
+                </view>
+            }
 
             <LongTermSteps 
                 step={props.longTermStep}

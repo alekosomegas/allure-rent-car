@@ -5,26 +5,37 @@ import * as utils from '@/utils';
 const MapWithNoSSR = dynamic(() => import("@/components/Map"), {
     ssr: false});
 
-export default function Contact() {
+export default function Contact({isLoading, setIsLoading}) {
     const [message, setMessage] = React.useState({
         name: "",
         email: "",
         message: ""
     })
 
+
+
     async function handleSubmit(event) {
         event.preventDefault()
-        alert("Thank you! We have received your message and an agent will contact you soon.")
-        
+        setIsLoading(true)
+
         await fetch("api/mail", {
-             method: "POST",
-             body: JSON.stringify(
+            method: "POST",
+            body: JSON.stringify(
                 {
                     info: message,
                     type: "contact"
                 }
-             )})
+                )})
+            .then(() => {
+                setIsLoading(false)
+                alert("Thank you! We have received your message and an agent will contact you soon.")
+            })
+            .catch(e => {
+                console.log(e);
+                setIsLoading(false);
+                alert("An Error has occurred. Please check the email address provided.")
 
+            })        
      }
 
     return (
@@ -93,12 +104,13 @@ export default function Contact() {
                 </div>
 
                 <div className="mt-2">
-                            <button
-                            type="submit"
-                            className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
-                            Send Message
-                            </button>
-                        </div>
+                    <button
+                    disabled={isLoading}
+                    type="submit"
+                    className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
+                    Send Message
+                    </button>
+                </div>
             </form>
         </section>
     )
