@@ -70,32 +70,51 @@ export default function handler(req, res) {
         },
       });
 
-    const enquiryMailOptions = {
-        from: "admin@allure-rent-a-car.com",
-        to: JSON.parse(req.body).email,
-        subject: `Leasing Enquiry - ${JSON.parse(req.body).car} - ${JSON.parse(req.body).name}`,
-        text: formatEnquiryEmail(JSON.parse(req.body))
-    }
-
-    const confirmMailOptions = {
-        from: "info@allure-rent-a-car.com",
-        to: JSON.parse(req.body).email,
-        subject: 'Long Term Booking Enquiry',
-        text: formatConfirmEmail(JSON.parse(req.body)),
-    }
-
-    transporter.sendMail(enquiryMailOptions, (error, info) => {
-        if (error) {
-          return console.error(error);
+      if(req === "POST") {
+        const enquiryMailOptions = {
+            from: "admin@allure-rent-a-car.com",
+            to: "kangkelidis@gmail.com",
+            subject: `Leasing Enquiry - ${JSON.parse(req.body).car} - ${JSON.parse(req.body).name}`,
+            text: formatEnquiryEmail(JSON.parse(req.body))
         }
-        console.log(info);
-      })
-    transporter.sendMail(confirmMailOptions, (error, info) => {
-        if (error) {
-          return console.error(error);
+    
+        const confirmMailOptions = {
+            from: "info@allure-rent-a-car.com",
+            to: JSON.parse(req.body).email,
+            subject: 'Long Term Booking Enquiry',
+            text: formatConfirmEmail(JSON.parse(req.body)),
         }
-        console.log(info);
-      })
+    
+        transporter.sendMail(enquiryMailOptions, (error, info) => {
+            if (error) {
+              return console.error(error);
+            }
+            console.log(info);
+          })
+        transporter.sendMail(confirmMailOptions, (error, info) => {
+            if (error) {
+              return console.error(error);
+            }
+            console.log(info);
+          })
+      }
+
+
+      if(req === "GET") {
+        const clientEmailOptions = {
+          from: "info@allure-rent-a-car.com",
+          to: JSON.parse(req.body).email,
+          subject: `Enquiry - ${JSON.parse(req.body).name}`,
+          text: formatClientEmail(JSON.parse(req.body))
+        }
+        const allureEmailOptions = {
+          from: "admin@allure-rent-a-car.com",
+          to: "kangkelidis@gmail.com",
+          subject: `Enquiry - ${JSON.parse(req.body).name}`,
+          text: formatClientEmail(JSON.parse(req.body))
+        }
+  
+      }
 
     res.status(200).json({status: "ok"})
 }

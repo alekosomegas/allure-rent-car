@@ -445,3 +445,22 @@ form input, select, textarea {
 .c-arrow--disabled {
   fill: rgba(255, 255, 255, 0.5);
 }
+
+
+.faq-row-wrapper {
+  .faq-title {
+    font-weight: 500;
+  }
+
+  .faq-body {
+      .faq-row {
+          .row-title {
+          }
+
+          .row-content {
+              .row-content-text {
+              }
+          }
+      }
+  }
+}

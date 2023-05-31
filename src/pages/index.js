@@ -6,7 +6,8 @@ import Fleet from '@/components/Fleet'
 import InfoBox from '@/components/InfoBox'
 import Footer from '@/components/Footer'
 import { useRouter } from 'next/router'
-
+import FAQ from '@/components/FAQ'
+import Contact from '@/components/Contact'
 
 export default function Home(props) {
   const [show, setShow] = React.useState(false)
@@ -95,41 +96,14 @@ export default function Home(props) {
           <br/><br/>
           We are more than a car rental company. We are your partner in exploring the beautiful island of Cyprus.
           With your own car, you can explore the island and its attractions and discover the rich history and culture of Cyprus.</p>
-            {/* <button className='button-main mt-4'>Contact US</button> */}
           </div>
         </div>
       </section>
-{/* 
+      <FAQ/>
+      <Contact />
+      <img src='/icons/road.png' alt="road" className='w-full'/>
 
-
-      <section  id="long-term" className='pt-5 md:grid md:grid-cols-2 text-center mx-6 gap-5'>
-        <div>
-          <h2 className='text-highlight1'>Long Term Rentals</h2>
-          <p>Are you looking for a car rental in Limassol for a <strong>month or longer?</strong> If so, you should consider our long term contract option. With our long term contract, you can enjoy:
-          </p>
-          <ul className='text-start'>
-            <li>Lower monthly rates than regular car rental</li>
-            <li>Free pick up and drop off at any address in Limassol</li>
-            <li>The option to swap your car for another one during the rental period</li>
-            <li>The flexibility to cancel or extend your contract at any time</li>
-          </ul>
-          <p>
-          Our long term contract is perfect for anyone who needs a car for an extended period of time. You can choose from our wide range of vehicles, from economy to luxury, and drive around the beautiful island of Cyprus with ease.
-          </p>
-        </div>
-        <div>
-          <h2 className='text-highlight1'>How to Rent a Car in Cyprus</h2>
-          <p>
-            If you are planning on exploring Cyprus, a rental car is essential. It provides the ability to travel at your own pace and convenience, and also grants access to areas of this amazing country that may otherwise be difficult to reach.
-          </p>
-          <h4 className='text-highlight1'>What Do You Need to Rent a Car in Cyprus?</h4>
-          <p>
-            To rent a car in Cyprus, you need a driver's license and a passport and you must be over 23 years old. An International driver's permit is not required. You can pay for your rental with a debit card or cash, but the deposit must be paid in advance and will be returned at the end of the rental period. If you choose to use a credit card, a hold equal to the deposit will be placed on your card until the rental is returned. The deposit amount varies depending on the car category.
-          </p>
-        </div>
-      </section> */}
-
-      <Footer image={true} map={true}/>
+      <Footer image={false} map={false}/>
     </main>
   )
 }

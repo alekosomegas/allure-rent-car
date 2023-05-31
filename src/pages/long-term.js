@@ -103,7 +103,7 @@ export default function LongTerm(props) {
                 </div>
 
             <div id='cars' className='h-15'/>
-            <h4 className='text-dark bg-bglight p-4 '>View all cars</h4>
+            <h4 className='text-dark bg-bglight p-4 '>Fleet Overview</h4>
             </section>
             <LongTermSteps 
                 step={props.longTermStep}
