@@ -8,6 +8,7 @@ import Footer from '@/components/Footer'
 import { useRouter } from 'next/router'
 import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
+import LoadingSpinner from '@/components/LoadingSpinner'
 
 export default function Home(props) {
   const [show, setShow] = React.useState(false)
@@ -16,6 +17,13 @@ export default function Home(props) {
   return (
     <main>
       <Navbar />
+    
+    { props.isLoading &&
+      <view className='loading'>
+            <LoadingSpinner />
+      </view>
+    }
+      
       <>
       <div className='text-white main-container flex justify-stretch overflow-hidden '>  
 
@@ -102,7 +110,7 @@ export default function Home(props) {
       <div id="faq" className="h-[72px]"/>
       <FAQ/>
       <div id="contact-us" className="h-[72px]"/>
-      <Contact />
+      <Contact isLoading={props.isLoading} setIsLoading={props.setIsLoading} />
       <img src='/icons/road.png' alt="road" className='w-full'/>
 
       <Footer image={false} map={false}/>
