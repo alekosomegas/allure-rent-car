@@ -46,8 +46,8 @@ export default function Contact() {
                 <div className="flex flex-row gap-2">
                     <img width={50} height={50} alt="address" src="/icons/location.png"/>
                     <p className="">Leoforos Amathous 32,<br/> Zanna Complex Block 1 Shop 8, <br/>Limassol, 4532</p>
-                </div>
-              </div>
+                </div>  
+            </div>
 
             <form onSubmit={handleSubmit} className="text-center w-1/3 bg-highlight1 p-4 max-md:w-full" action="">
                 <h3 className="text-white font-bold">Got a Question?</h3>
