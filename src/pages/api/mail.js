@@ -99,7 +99,7 @@ Limassol, 4532
     `
 }
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
 
     const transporter = Nodemailer.createTransport({
         host: "smtp.zoho.eu",
@@ -126,18 +126,21 @@ export default function handler(req, res) {
             text: formatConfirmEmail(JSON.parse(req.body).info),
         }
     
-        transporter.sendMail(enquiryMailOptions, (error, info) => {
-            if (error) {
-              return console.error(error);
-            }
-            console.log(info);
-          })
-        transporter.sendMail(confirmMailOptions, (error, info) => {
-            if (error) {
-              return console.error(error);
-            }
-            console.log(info);
-          })
+        await new Promise((resolve, reject) => {
+          transporter.sendMail(enquiryMailOptions, (error, info) => {
+              if (error) {
+                return console.error(error);
+              }
+              console.log(info);
+            })
+          transporter.sendMail(confirmMailOptions, (error, info) => {
+              if (error) {
+                return console.error(error);
+              }
+              console.log(info);
+            })
+        })
+
       }
 
 
@@ -155,17 +158,19 @@ export default function handler(req, res) {
           text: formatClientContactEmail(JSON.parse(req.body).info)
         }
 
-        transporter.sendMail(allureEmailOptions, (error, info) => {
-          if (error) {
-            return console.error(error);
-          }
-          console.log(info);
-        })
-        transporter.sendMail(clientEmailOptions, (error, info) => {
-          if (error) {
-            return console.error(error);
-          }
-          console.log(info);
+        await new Promise((resolve, reject) => {
+          transporter.sendMail(allureEmailOptions, (error, info) => {
+            if (error) {
+              return console.error(error);
+            }
+            console.log(info);
+          })
+          transporter.sendMail(clientEmailOptions, (error, info) => {
+            if (error) {
+              return console.error(error);
+            }
+            console.log(info);
+          })
         })
   
       }
