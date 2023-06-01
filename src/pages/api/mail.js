@@ -49,9 +49,7 @@ Best regards,
 Allure rent-a-car
 
 +357 99 667777
-
 www.allure-rent-a-car.com
-
 Leoforos Amathous 32,
 Zanna Complex Block 1 Shop 8,
 Limassol, 4532

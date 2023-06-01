@@ -1,4 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
+
 
 export default function Document() {
   return (
@@ -13,6 +15,36 @@ export default function Document() {
         <script id="rentsyst_booking_widget" src="https://rentsyst.com/settings/iframe-constructor/script/?token=bJ6LkkUGpV4Pq8gzkcXsvnK020Mr7XpH&id=4239"></script>
         
         <script async data-id="101410137" src="//static.getclicky.com/js"></script>
+
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11201521302"></script>
+        
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11201521302" strategy="afterInteractive"/>
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`  
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'AW-11201521302');
+          `}
+        </Script>
+
+        <Script>
+          {`
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:3492614,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+          `}
+        </Script>
+
+
 
         <meta name="description" content="Allure car rentals is a family-run business based in Limassol. We provide luxury and affordable cars, friendly service and prices. Book now and discover the allure of Cyprus with ease."/>
         <meta charset="UTF-8"/>
