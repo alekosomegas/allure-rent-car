@@ -31,7 +31,7 @@ export default function Document() {
           `}
         </Script>
 
-        <Script>
+        <Script id="hotjar-analytics" strategy="afterInteractive">
           {`
             (function(h,o,t,j,a,r){
                 h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
