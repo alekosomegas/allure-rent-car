@@ -13,36 +13,6 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet"/>
         <script id="rentsyst_booking_widget" src="https://rentsyst.com/settings/iframe-constructor/script/?token=bJ6LkkUGpV4Pq8gzkcXsvnK020Mr7XpH&id=4239"></script>
         
-        <script async data-id="101410137" src="//static.getclicky.com/js"></script>
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11201521302"></script>
-        
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11201521302" strategy="afterInteractive"/>
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`  
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'AW-11201521302');
-          `}
-        </Script>
-
-        <Script id="hotjar-analytics" strategy="afterInteractive">
-          {`
-            (function(h,o,t,j,a,r){
-                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                h._hjSettings={hjid:3492614,hjsv:6};
-                a=o.getElementsByTagName('head')[0];
-                r=o.createElement('script');r.async=1;
-                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-          `}
-        </Script>
-
-        <meta charset="UTF-8"/>
       </Head>
       <body>
         <Main />
