@@ -1,10 +1,9 @@
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+const metaDescription = `Thank you for choosing Allure for your long term leasing in Cyprus.We will contact you soon.`
 
 export default function EnquirySent() {
+
     return (
-        <>
-        <Navbar />
+        <Layout title="Thank you" description={metaDescription}>
         <main className='mx-auto max-w-screen-md px-14 py-20 sm:px-6 lg:px-8'>
             <div className="flex flex-col-reverse gap-5 md:flex-row">
                 <img className='h-[400px] object-scale-down' src='/images/white-car.jpg'/>
@@ -14,7 +13,6 @@ export default function EnquirySent() {
                 </div>
             </div>
         </main>
-        <Footer />
-        </>
+        </Layout>
     )
 }

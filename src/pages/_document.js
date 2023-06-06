@@ -6,7 +6,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@500&family=Meddon&family=Pacifico&display=swap" rel="stylesheet"></link>
@@ -15,7 +14,6 @@ export default function Document() {
         <script id="rentsyst_booking_widget" src="https://rentsyst.com/settings/iframe-constructor/script/?token=bJ6LkkUGpV4Pq8gzkcXsvnK020Mr7XpH&id=4239"></script>
         
         <script async data-id="101410137" src="//static.getclicky.com/js"></script>
-
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11201521302"></script>
         
@@ -44,9 +42,6 @@ export default function Document() {
           `}
         </Script>
 
-
-
-        <meta name="description" content="Allure car rentals is a family-run business based in Limassol. We provide luxury and affordable cars, friendly service and prices. Book now and discover the allure of Cyprus with ease."/>
         <meta charset="UTF-8"/>
       </Head>
       <body>

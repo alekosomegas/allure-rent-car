@@ -1,6 +1,7 @@
 import * as utils from '@/utils';
 import React from "react"
 import {useRouter} from "next/router"
+import { nanoid } from 'nanoid'
 
 
 export default function LongTermCarListing(props) {

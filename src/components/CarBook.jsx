@@ -8,13 +8,13 @@ export default function CarBook(props) {
             <>
             {!props.showBookCar &&
             <>
-            <div className='text-center mb-20 px-5'>
+            <div className='text-center mb-10 px-5'>
                 <h1 className='font-bold text-4xl text-highlight1'>Rent a Car in Limassol</h1>
                 <p className='text-sm'>Welcome to <strong>Allure Luxury Car Rentals</strong>, the best choice for <strong>car rental in Limassol.</strong>
                 <br />We offer a wide range of vehicles, from <strong>economy</strong> to <strong>luxury</strong>,<br /> to suit your needs and budget.</p>
             </div>
 
-            <button className='font-bold align-self-center mt-2 button-main w-[250px]'
+            <button className='font-bold align-self-center mt-0 button-main w-[250px]'
                 onClick={() => {router.push("/book-a-car")}}>
                 FIND YOUR CAR
             </button>

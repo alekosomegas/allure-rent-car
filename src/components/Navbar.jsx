@@ -3,14 +3,16 @@ import Logo from "./Logo"
 
 export default function MainNavbar() {
     return (
-        <Navbar expand="lg" fixed='top'>
+        <Navbar expand="lg" fixed='top' variant="dark">
         <Container>
 
           <Navbar.Brand href="/" className="no-underline" > 
-            <Logo 
-            icon={true}/>
+            {/* <Logo 
+            icon={true}/> */}
+            <img src="/icons/navbarlogo.png" height={50} alt="logo" />
+
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link className="text-white" href="/#fleet">Our Fleet</Nav.Link>

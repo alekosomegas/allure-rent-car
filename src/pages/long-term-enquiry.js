@@ -1,13 +1,14 @@
-import Footer from '@/components/Footer'
 import Carousel from '@/components/Carousel'
 import LongTermSteps from '@/components/LongTermSteps'
-import Navbar from '@/components/Navbar'
 import { useRouter } from 'next/router'
 import React from 'react'
 import * as utils from '@/utils';
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/dark.css";
 import LoadingSpinner from '@/components/LoadingSpinner'
+import Layout from '@/components/Layout'
+
+const metaDescription = `Choose your preferred vehicle for leasing in Cyprus, send as message and we will contact you soon!`
 
 
 export default function LongTermEnquiry(props) {
@@ -57,9 +58,7 @@ export default function LongTermEnquiry(props) {
     }
 
     return(
-        <main>
-            <Navbar/>
-
+        <Layout title='Book your Car' description={metaDescription}>
             { props.isLoading &&
                 <view className='loading'>
                         <LoadingSpinner />
@@ -257,7 +256,6 @@ export default function LongTermEnquiry(props) {
                     </div>
                 </div>
             </section>
-            <Footer/>
-        </main>
+        </Layout>
     )
 }

@@ -1,22 +1,23 @@
 import React from 'react'
 import CarBook from '@/components/CarBook'
 import LongTermBook from '@/components/LongTermBook'
-import Navbar from '@/components/Navbar'
 import Fleet from '@/components/Fleet'
 import InfoBox from '@/components/InfoBox'
-import Footer from '@/components/Footer'
 import { useRouter } from 'next/router'
 import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
 import LoadingSpinner from '@/components/LoadingSpinner'
+import Layout from '@/components/Layout'
+
+const metaDescription = `Allure Rent a Car offers luxury cars at affordable prices in Limassol. Book now and discover the allure of Cyprus with ease.`
+
 
 export default function Home(props) {
   const [show, setShow] = React.useState(false)
   const router = useRouter();   
 
   return (
-    <main>
-      <Navbar />
+    <Layout title='Allure Rent a Car in Limassol' description={metaDescription}>
     
     { props.isLoading &&
       <view className='loading'>
@@ -113,8 +114,7 @@ export default function Home(props) {
       <Contact isLoading={props.isLoading} setIsLoading={props.setIsLoading} />
       <img src='/icons/road.png' alt="road" className='w-full'/>
 
-      <Footer image={false} map={false}/>
-    </main>
+    </Layout>
   )
 }
 

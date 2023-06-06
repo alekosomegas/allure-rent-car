@@ -38,7 +38,6 @@ export default function Fleet() {
                     />
                 <span className="circle" aria-hidden="true"/>
             </div>
-
         </div>
     )
 }

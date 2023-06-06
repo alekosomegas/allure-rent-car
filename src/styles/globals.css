@@ -24,7 +24,7 @@
 
 body {
   color: var(--foreground);
-  background-color: var(--background);
+  background-color: var(--background) !important;
   padding-top: 70px;
   font-family: 'Lato', sans-serif;
   line-height:  1.5rem;
@@ -63,7 +63,7 @@ body {
   background-color: var(--b4);
   border: none;
   padding: 0.5rem 1rem;
-  line-height: 1.5;
+  line-height: 2.5;
   border-radius: 0.3rem;
 }
 

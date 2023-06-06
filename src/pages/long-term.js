@@ -1,12 +1,13 @@
-import Navbar from '@/components/Navbar'
 import LongTermCarListing from '@/components/LongTermCarListining'
 import InfoBox from '@/components/InfoBox'
 import React from 'react'
-import Footer from '@/components/Footer'
 import { nanoid } from 'nanoid'
 import LongTermSteps from "@/components/LongTermSteps";
+import Layout from '@/components/Layout'
 
 const cars = require('../cars')
+
+const metaDescription = `Looking for a flexible and cost-effective car rental in Limassol? Our long-term leasing program is ideal for anyone who needs a car for an extended period. Contact us today to learn more!`
 
 const infoBoxes =[
 
@@ -15,24 +16,28 @@ const infoBoxes =[
             title={"Flexible contract"}
             description={"Cancel or extend your contract at any time."}
             horizontal={true}
+            key={nanoid()}
             />,
             <InfoBox
             icon={"wallet"}
             title={"Pay monthly"}
             description={"Same rate for the whole rental duration."}
             horizontal={true}
+            key={nanoid()}
             />,
             <InfoBox
             icon={"swap"}
             title={"Change car"}
             description={"Swap your car for another one at any time."}
             horizontal={true}
+            key={nanoid()}
             />,
             <InfoBox
             icon={"euro"}
             title={"No extra costs"}
             description={"Free additional driver and unlimited miles."}
             horizontal={true}
+            key={nanoid()}
             />,
 
 ]
@@ -49,17 +54,16 @@ export default function LongTerm(props) {
         car={car} 
         setLongTermCar={props.setLongTermCar} 
         setLongTermStep={props.setLongTermStep}        
-        key={nanoid}/>)
+        key={nanoid()}/>)
 
     let dots = []
     for (let i = 0; i < infoBoxes.length; i++) {
-        dots[i] = <div className='small-circle'/>
+        dots[i] = <div key={nanoid()} className='small-circle'/>
     }
-    dots[index] = <div className='small-circle !bg-highlight1'/>
+    dots[index] = <div key={nanoid()} className='small-circle !bg-highlight1'/>
     
     return (
-        <main>
-            <Navbar />
+        <Layout title='Car leasing Cyprus' description={metaDescription}>
             <section className=''>
                 <div className='flex flex-row max-sm:block'>
                     <h1 className='font-bold text-highlight1 w-[400px] left-11 top-32 md:absolute text-5xl lg:w-[600px]
@@ -109,11 +113,9 @@ export default function LongTerm(props) {
                 step={props.longTermStep}
                 setLongTermStep={props.setLongTermStep}
                 />
-            <div className="cars grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-10 py-8">
+            <div className=" cars grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-10 py-8">
                 {items}
             </div>
-
-            <Footer />
-        </main>
+        </Layout>
     )
 }

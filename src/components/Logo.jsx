@@ -19,7 +19,6 @@ export default function Logo( props ) {
             <small className="text-[0.75rem] leading-[0.3rem] text-white">rent-a-car</small>
         </div>
         <strong className="relative font-logo text-5xl tracking-wide text-white">allure</strong>
-
     </>
     )
 }
