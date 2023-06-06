@@ -1,3 +1,5 @@
+import Layout from '@/components/Layout'
+
 const metaDescription = `Thank you for choosing Allure for your long term leasing in Cyprus.We will contact you soon.`
 
 export default function EnquirySent() {
