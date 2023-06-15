@@ -1,29 +1,39 @@
-import { Nav, Navbar, Container } from "react-bootstrap"
-import Logo from "./Logo"
+import { Nav, Navbar, Container } from "react-bootstrap";
+import Logo from "./Logo";
 
 export default function MainNavbar() {
-    return (
-        <Navbar expand="lg" fixed='top' variant="dark">
-        <Container>
-
-          <Navbar.Brand href="/" className="no-underline" > 
-            {/* <Logo 
+  return (
+    <Navbar expand="lg" fixed="top" variant="dark">
+      <Container>
+        <Navbar.Brand href="/" className="no-underline">
+          {/* <Logo 
             icon={true}/> */}
-            <img src="/icons/navbarlogo.png" height={50} alt="logo" />
-
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link className="text-white" href="/#fleet">Our Fleet</Nav.Link>
-              <Nav.Link className="text-white" href="/#about-us">About Us</Nav.Link>
-              <Nav.Link className="text-white" href="/book-a-car">Rent a Car</Nav.Link>
-              <Nav.Link className="text-white" href="/long-term">Long Term</Nav.Link>
-              <Nav.Link className="text-white" href="/#faq">FAQ</Nav.Link>
-              <Nav.Link className="text-white" href="/#contact-us">Contact Us</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    )
+          <img src="/icons/navbarlogo.png" height={50} alt="logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link className="text-white" href="/#fleet">
+              Our Fleet
+            </Nav.Link>
+            <Nav.Link className="text-white" href="/#about-us">
+              About Us
+            </Nav.Link>
+            <Nav.Link className="text-white" href="/book-a-car">
+              Rent a Car
+            </Nav.Link>
+            <Nav.Link className="text-white" href="/long-term">
+              Long Term
+            </Nav.Link>
+            <Nav.Link className="text-white" href="/#faq">
+              FAQ
+            </Nav.Link>
+            <Nav.Link className="text-white" href="/#contact-us">
+              Contact Us
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }

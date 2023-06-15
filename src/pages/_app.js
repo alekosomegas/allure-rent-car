@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@/styles/globals.css'
-import '@/styles/car.css'
+import React, { useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@/styles/globals.css";
+import "@/styles/car.css";
 
 export default function App({ Component, pageProps }) {
-  const [longTermCar, setLongTermCar] = React.useState(false)
-  const [longTermStep, setLongTermStep] = React.useState(1)
-  const [isLoading, setIsLoading] = React.useState(false)
+  const [longTermCar, setLongTermCar] = React.useState(false);
+  const [longTermStep, setLongTermStep] = React.useState(1);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   return (
     <>
-      <Component 
+      <Component
         {...pageProps}
         longTermCar={longTermCar}
         setLongTermCar={setLongTermCar}
@@ -20,6 +20,5 @@ export default function App({ Component, pageProps }) {
         setIsLoading={setIsLoading}
       />
     </>
-    
-  ) 
+  );
 }
